@@ -1,685 +1,1021 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-  <title>Blessed Forexpert | Professional Forex Mentorship in Zimbabwe</title>  
-  <meta name="description" content="Expert forex trading education and mentorship for Zimbabwean traders. Data-driven strategies, proven results, and professional guidance.">  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">  
-  <style>  
-    :root {  
-      --gold: #FFD700;  
-      --gold-light: #FFE040;  
-      --gold-dark: #CCAC00;  
-      --purple: #9D4EDD;  
-      --purple-light: #B77DFF;  
-      --purple-dark: #7A28CB;  
-      --dark: #0A0A0A;  
-      --dark-2: #121212;  
-      --dark-3: #1E1E1E;  
-      --gray: #B0B0B0;  
-      --gray-light: #E0E0E0;  
-      --success: #25D366;  
-      --surface: rgba(18, 18, 18, 0.7);  
-      --glass-border: rgba(255, 255, 255, 0.1);  
-      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);  
-      --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.35);  
-      --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.4);  
-      --transition-fast: 0.2s ease;  
-      --transition: 0.3s ease;  
-      --transition-spring: cubic-bezier(0.25, 0.8, 0.25, 1);  
-    }  * {  
-  margin: 0;  
-  padding: 0;  
-  box-sizing: border-box;  
-}  
-
-body {  
-  font-family: 'Inter', sans-serif;  
-  background: linear-gradient(135deg, var(--dark), #000);  
-  color: var(--gray-light);  
-  line-height: 1.7;  
-  overflow-x: hidden;  
-  position: relative;  
-}  
-
-h1, h2, h3, h4, h5, h6 {  
-  font-family: 'Space Grotesk', sans-serif;  
-  font-weight: 700;  
-  letter-spacing: -0.5px;  
-}  
-
-.container {  
-  width: 90%;  
-  max-width: 1200px;  
-  margin: 0 auto;  
-  padding: 0 20px;  
-}  
-
-/* ===== NAVBAR ===== */  
-nav {  
-  position: sticky;  
-  top: 0;  
-  z-index: 1000;  
-  backdrop-filter: blur(12px);  
-  -webkit-backdrop-filter: blur(12px);  
-  background: rgba(10, 10, 10, 0.9);  
-  border-bottom: 1px solid var(--glass-border);  
-  padding: 18px 0;  
-  transition: var(--transition);  
-}  
-
-.nav-container {  
-  display: flex;  
-  justify-content: space-between;  
-  align-items: center;  
-}  
-
-.logo {  
-  font-size: 24px;  
-  font-weight: 700;  
-  color: white;  
-  display: flex;  
-  align-items: center;  
-  gap: 10px;  
-}  
-
-.logo span {  
-  background: linear-gradient(to right, var(--gold), var(--purple-light));  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-}  
-
-.nav-links {  
-  display: flex;  
-  gap: 40px;  
-}  
-
-.nav-links a {  
-  color: var(--gray);  
-  text-decoration: none;  
-  font-size: 16px;  
-  font-weight: 500;  
-  position: relative;  
-  transition: var(--transition);  
-}  
-
-.nav-links a:hover {  
-  color: white;  
-}  
-
-.nav-links a::after {  
-  content: '';  
-  position: absolute;  
-  bottom: -6px;  
-  left: 0;  
-  width: 0;  
-  height: 2px;  
-  background: linear-gradient(to right, var(--gold), var(--purple));  
-  transition: var(--transition-spring);  
-}  
-
-.nav-links a:hover::after {  
-  width: 100%;  
-}  
-
-.mobile-menu-btn {  
-  display: none;  
-  background: none;  
-  border: none;  
-  color: white;  
-  font-size: 24px;  
-  cursor: pointer;  
-}  
-
-/* ===== HERO ===== */  
-.hero {  
-  padding: 160px 0 120px;  
-  text-align: center;  
-  position: relative;  
-  overflow: hidden;  
-}  
-
-.hero h1 {  
-  font-size: 4rem;  
-  max-width: 800px;  
-  margin: 0 auto 24px;  
-  color: white;  
-  background: linear-gradient(to right, #fff, var(--gold-light));  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-  line-height: 1.15;  
-}  
-
-.hero p {  
-  font-size: 1.25rem;  
-  max-width: 700px;  
-  margin: 0 auto 40px;  
-  color: var(--gray);  
-  font-weight: 400;  
-}  
-
-.btn {  
-  display: inline-block;  
-  padding: 14px 32px;  
-  background: linear-gradient(135deg, var(--gold), var(--purple));  
-  color: var(--dark);  
-  border: none;  
-  border-radius: 12px;  
-  font-weight: 600;  
-  font-size: 16px;  
-  cursor: pointer;  
-  text-decoration: none;  
-  transition: all 0.3s var(--transition-spring);  
-  box-shadow: var(--shadow-sm);  
-  text-transform: uppercase;  
-  letter-spacing: 0.8px;  
-}  
-
-.btn:hover {  
-  transform: translateY(-3px);  
-  box-shadow: var(--shadow-md);  
-}  
-
-.btn:active {  
-  transform: translateY(1px);  
-}  
-
-.btn-secondary {  
-  background: transparent;  
-  border: 1px solid var(--gold);  
-  color: var(--gold);  
-  box-shadow: none;  
-}  
-
-.btn-secondary:hover {  
-  background: rgba(255, 215, 0, 0.1);  
-}  
-
-.hero-btns {  
-  display: flex;  
-  justify-content: center;  
-  gap: 20px;  
-  flex-wrap: wrap;  
-}  
-
-/* ===== STATS ===== */  
-.stats {  
-  padding: 80px 0;  
-  background: rgba(20, 20, 20, 0.6);  
-  text-align: center;  
-}  
-
-h2 {  
-  font-size: 2.8rem;  
-  margin-bottom: 50px;  
-  background: linear-gradient(to right, var(--gold-light), var(--purple-light));  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-}  
-
-.stats-grid {  
-  display: grid;  
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  
-  gap: 30px;  
-}  
-
-.stat-box {  
-  padding: 24px;  
-}  
-
-.stat-number {  
-  font-size: 3rem;  
-  font-weight: 700;  
-  color: var(--gold);  
-}  
-
-.stat-text {  
-  color: var(--gray);  
-  font-size: 1.1rem;  
-}  
-
-/* ===== INFO GRID ===== */  
-.info-grid {  
-  display: grid;  
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
-  gap: 30px;  
-  margin-top: 60px;  
-}  
-
-.info-box {  
-  background: var(--surface);  
-  backdrop-filter: blur(10px);  
-  border: 1px solid var(--glass-border);  
-  border-radius: 16px;  
-  padding: 32px;  
-  transition: var(--transition-spring);  
-  position: relative;  
-  overflow: hidden;  
-}  
-
-.info-box:hover {  
-  transform: translateY(-8px);  
-  box-shadow: var(--shadow-md);  
-  border-color: var(--gold);  
-}  
-
-.info-box i {  
-  font-size: 32px;  
-  color: var(--gold);  
-  margin-bottom: 20px;  
-}  
-
-.info-box h3 {  
-  font-size: 1.5rem;  
-  margin-bottom: 16px;  
-  color: white;  
-}  
-
-.info-box p {  
-  color: var(--gray);  
-  margin-bottom: 24px;  
-}  
-
-/* ===== TESTIMONIALS ===== */  
-.testimonials {  
-  padding: 100px 0;  
-  background: rgba(15, 15, 15, 0.5);  
-}  
-
-.testimonial-grid {  
-  display: grid;  
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
-  gap: 30px;  
-  margin-top: 50px;  
-}  
-
-.testimonial-card {  
-  background: var(--surface);  
-  backdrop-filter: blur(10px);  
-  border: 1px solid var(--glass-border);  
-  border-radius: 16px;  
-  padding: 30px;  
-  position: relative;  
-}  
-
-.testimonial-text {  
-  font-style: italic;  
-  color: var(--gray-light);  
-  line-height: 1.8;  
-  position: relative;  
-  z-index: 1;  
-}  
-
-.testimonial-author {  
-  display: flex;  
-  align-items: center;  
-  gap: 15px;  
-  margin-top: 20px;  
-}  
-
-.author-avatar {  
-  width: 50px;  
-  height: 50px;  
-  border-radius: 50%;  
-  background: linear-gradient(135deg, var(--gold), var(--purple));  
-  display: flex;  
-  align-items: center;  
-  justify-content: center;  
-  font-weight: 600;  
-  color: black;  
-}  
-
-.author-info h4 {  
-  color: white;  
-  font-size: 1.1rem;  
-}  
-
-.author-info p {  
-  color: var(--gray);  
-  font-size: 0.95rem;  
-}  
-
-/* ===== CONTACT ===== */  
-.contact-grid {  
-  display: grid;  
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
-  gap: 30px;  
-}  
-
-.contact-card {  
-  background: var(--surface);  
-  backdrop-filter: blur(10px);  
-  border: 1px solid var(--glass-border);  
-  border-radius: 16px;  
-  padding: 30px;  
-  text-align: center;  
-}  
-
-.contact-card i {  
-  font-size: 32px;  
-  color: var(--gold);  
-  margin-bottom: 16px;  
-}  
-
-.contact-card h3 {  
-  color: white;  
-  margin-bottom: 12px;  
-}  
-
-.contact-card p {  
-  color: var(--gray);  
-  margin-bottom: 20px;  
-}  
-
-.social-links {  
-  display: flex;  
-  justify-content: center;  
-  gap: 20px;  
-  margin: 40px 0;  
-}  
-
-.social-links a {  
-  display: flex;  
-  align-items: center;  
-  justify-content: center;  
-  width: 50px;  
-  height: 50px;  
-  border-radius: 50%;  
-  background: rgba(255, 255, 255, 0.08);  
-  color: var(--gold);  
-  font-size: 20px;  
-  transition: var(--transition);  
-}  
-
-.social-links a:hover {  
-  background: rgba(255, 215, 0, 0.15);  
-  transform: translateY(-3px);  
-}  
-
-/* ===== MODALS ===== */  
-.enrollment-popup, .choice-modal {  
-  display: none;  
-  position: fixed;  
-  top: 0;  
-  left: 0;  
-  width: 100%;  
-  height: 100%;  
-  background: rgba(0, 0, 0, 0.85);  
-  backdrop-filter: blur(8px);  
-  z-index: 1000;  
-  justify-content: center;  
-  align-items: center;  
-}  
-
-.popup-content, .choice-content {  
-  background: var(--dark-2);  
-  border: 1px solid var(--glass-border);  
-  border-radius: 16px;  
-  padding: 40px;  
-  max-width: 500px;  
-  width: 90%;  
-  text-align: center;  
-  box-shadow: var(--shadow-lg);  
-  position: relative;  
-  animation: popIn 0.5s var(--transition-spring);  
-}  
-
-@keyframes popIn {  
-  0% { opacity: 0; transform: scale(0.9); }  
-  100% { opacity: 1; transform: scale(1); }  
-}  
-
-.close-popup {  
-  position: absolute;  
-  top: 16px;  
-  right: 16px;  
-  font-size: 28px;  
-  color: var(--gray);  
-  cursor: pointer;  
-  transition: var(--transition);  
-}  
-
-.close-popup:hover {  
-  color: white;  
-}  
-
-/* ===== FOOTER ===== */  
-footer {  
-  background: var(--dark-2);  
-  padding: 60px 0 30px;  
-  border-top: 1px solid var(--glass-border);  
-}  
-
-.footer-logo {  
-  font-size: 24px;  
-  font-weight: 700;  
-  background: linear-gradient(to right, var(--gold), var(--purple));  
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-}  
-
-.footer-links {  
-  display: flex;  
-  justify-content: center;  
-  gap: 30px;  
-  margin: 30px 0;  
-  flex-wrap: wrap;  
-}  
-
-.footer-links a {  
-  color: var(--gray);  
-  text-decoration: none;  
-  transition: var(--transition);  
-}  
-
-.footer-links a:hover {  
-  color: white;  
-}  
-
-.copyright {  
-  color: #777;  
-  font-size: 14px;  
-  margin-top: 30px;  
-}  
-
-/* ===== RESPONSIVE ===== */  
-@media (max-width: 768px) {  
-  .nav-links { display: none; }  
-  .mobile-menu-btn { display: block; }  
-  .nav-links.active { display: flex; flex-direction: column; gap: 20px; padding: 20px 0; }  
-  .hero h1 { font-size: 2.8rem; }  
-  h2 { font-size: 2.2rem; }  
-  .stat-number { font-size: 2.5rem; }  
-}
-
-  </style>  
-</head>  
-<body>  <nav>  
-  <div class="container nav-container">  
-    <div class="logo">  
-      <i class="fas fa-chart-network"></i> <span>Blessed Forexpert</span>  
-    </div>  
-    <div class="nav-links" id="navLinks">  
-      <a href="#home">Home</a>  
-      <a href="#testimonials">Success Stories</a>  
-      <a href="#contact">Contact</a>  
-    </div>  
-    <button class="mobile-menu-btn" id="mobileMenuBtn">  
-      <i class="fas fa-bars"></i>  
-    </button>  
-  </div>  
-</nav>  <section class="hero" id="home">  
-  <div class="container">  
-    <h1>Professional Forex Mentorship for Zimbabwean Traders</h1>  
-    <p>Learn data-driven strategies, risk management, and technical analysis from an experienced mentor. Join traders across Harare, Bulawayo, and beyond who are building sustainable trading careers.</p>  
-    <div class="hero-btns">  
-      <a href="#testimonials" class="btn">See Success Stories</a>  
-      <a href="#contact" class="btn btn-secondary">Free Consultation</a>  
-    </div>  
-  </div>  
-</section>  <section class="stats">  
-  <div class="container">  
-    <h2>Our Impact</h2>  
-    <div class="stats-grid">  
-      <div class="stat-box">  
-        <i class="fas fa-users"></i>  
-        <div class="stat-number">500+</div>  
-        <div class="stat-text">Traders Mentored</div>  
-      </div>  
-      <div class="stat-box">  
-        <i class="fas fa-chart-line"></i>  
-        <div class="stat-number">85%</div>  
-        <div class="stat-text">Consistency Rate</div>  
-      </div>  
-      <div class="stat-box">  
-        <i class="fas fa-calendar"></i>  
-        <div class="stat-number">5+</div>  
-        <div class="stat-text">Years of Experience</div>  
-      </div>  
-      <div class="stat-box">  
-        <i class="fas fa-star"></i>  
-        <div class="stat-number">4.9</div>  
-        <div class="stat-text">Client Rating</div>  
-      </div>  
-    </div>  
-  </div>  
-</section>  <section class="container">  
-  <h2>Begin Your Trading Journey</h2>  
-  <div class="info-grid">  
-    <div class="info-box">  
-      <i class="fas fa-graduation-cap"></i>  
-      <h3>Structured Mentorship</h3>  
-      <p>From fundamentals to advanced strategies, our step-by-step program builds your skills progressively with real-market applications.</p>  
-      <a href="https://youtube.com/@blessingfxguru" target="_blank" class="btn">Watch Free Lessons</a>  
-    </div>  
-    <div class="info-box">  
-      <i class="fas fa-wallet"></i>  
-      <h3>Broker Guidance</h3>  
-      <p>Learn how to safely open accounts with regulated brokers and manage your capital with professional risk protocols.</p>  
-      <a href="https://track.deriv.com/_FkLIUymA9QBMjdsyM5hasGNd7ZgqdRLk/1/" class="btn">Get Setup Guide</a>  
-    </div>  
-    <div class="info-box">  
-      <i class="fas fa-brain"></i>  
-      <h3>Strategy Development</h3>  
-      <p>Discover how to create personalized trading plans based on market conditions, not hype or signals.</p>  
-      <a href="#" class="btn" onclick="showChoiceModal()">Learn More</a>  
-    </div>  
-  </div>  
-</section>  <section class="testimonials" id="testimonials">  
-  <div class="container">  
-    <h2>Traders' Success Stories</h2>  
-    <div class="testimonial-grid">  
-      <div class="testimonial-card">  
-        <p class="testimonial-text">"The structured mentorship transformed my approach. I now trade with discipline and consistency."</p>  
-        <div class="testimonial-author">  
-          <div class="author-avatar">TM</div>  
-          <div class="author-info">  
-            <h4>Tendai M.</h4>  
-            <p>Harare</p>  
-          </div>  
-        </div>  
-      </div>  
-      <div class="testimonial-card">  
-        <p class="testimonial-text">"Finally found a mentor who teaches real skills, not just signals. My confidence has grown immensely."</p>  
-        <div class="testimonial-author">  
-          <div class="author-avatar">SK</div>  
-          <div class="author-info">  
-            <h4>Sarah K.</h4>  
-            <p>Bulawayo</p>  
-          </div>  
-        </div>  
-      </div>  
-      <div class="testimonial-card">  
-        <p class="testimonial-text">"The focus on risk management changed everything. I'm now consistently profitable."</p>  
-        <div class="testimonial-author">  
-          <div class="author-avatar">JD</div>  
-          <div class="author-info">  
-            <h4>James D.</h4>  
-            <p>Mutare</p>  
-          </div>  
-        </div>  
-      </div>  
-    </div>  
-  </div>  
-</section>  <section class="container" id="contact">  
-  <h2>Contact Us</h2>  
-  <div class="contact-grid">  
-    <div class="contact-card">  
-      <i class="fab fa-whatsapp"></i>  
-      <h3>WhatsApp</h3>  
-      <p>+263 78 938 5081</p>  
-      <a href="https://wa.me/263789385081" class="btn">Message Now</a>  
-    </div>  
-    <div class="contact-card">  
-      <i class="fas fa-envelope"></i>  
-      <h3>Email</h3>  
-      <p>Bdpvtltd1@gmail.com</p>  
-      <a href="mailto:Bdpvtltd1@gmail.com" class="btn">Send Email</a>  
-    </div>  
-  </div>  
-  <div class="social-links">  
-    <a href="https://facebook.com/share/16kgW17azL/" target="_blank"><i class="fab fa-facebook"></i></a>  
-    <a href="https://instagram.com/blessing_forex_xperts" target="_blank"><i class="fab fa-instagram"></i></a>  
-    <a href="https://youtube.com/@blessingfxguru" target="_blank"><i class="fab fa-youtube"></i></a>  
-  </div>  
-</section>  <!-- Modals -->  <div class="choice-modal" id="choiceModal">  
-  <div class="choice-content">  
-    <span class="close-popup" onclick="closeChoiceModal()">&times;</span>  
-    <h3>How Would You Like to Learn?</h3>  
-    <p>Choose your preferred method:</p>  
-    <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">  
-      <a href="https://wa.me/263789385081?text=Hi%20Blessed%20Forexpert,%20I'd%20like%20to%20learn%20via%20WhatsApp%20mentorship." class="btn" target="_blank">WhatsApp</a>  
-      <a href="https://youtube.com/@blessingfxguru" class="btn btn-secondary" target="_blank">YouTube</a>  
-    </div>  
-  </div>  
-</div>  <footer>  
-  <div class="container">  
-    <div class="footer-logo">Blessed Forexpert</div>  
-    <p>Professional forex mentorship for Zimbabwean traders. Focus on education, not hype.</p>  
-    <div class="footer-links">  
-      <a href="#home">Home</a>  
-      <a href="#testimonials">Success Stories</a>  
-      <a href="#contact">Contact</a>  
-      <a href="#">Privacy</a>  
-    </div>  
-    <p class="copyright">© 2025 Blessed Forexpert. All rights reserved.</p>  
-  </div>  
-</footer>  <script>  
-  document.addEventListener('DOMContentLoaded', () => {  
-    const mobileBtn = document.getElementById('mobileMenuBtn');  
-    const navLinks = document.getElementById('navLinks');  
-      
-    mobileBtn.addEventListener('click', () => {  
-      navLinks.classList.toggle('active');  
-    });  
-  
-    // Smooth scrolling  
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {  
-      anchor.addEventListener('click', function(e) {  
-        e.preventDefault();  
-        const target = document.querySelector(this.getAttribute('href'));  
-        if (target) {  
-          target.scrollIntoView({ behavior: 'smooth' });  
-          navLinks.classList.remove('active');  
-        }  
-      });  
-    });  
-  });  
-  
-  function showChoiceModal() {  
-    document.getElementById('choiceModal').style.display = 'flex';  
-  }  
-  
-  function closeChoiceModal() {  
-    document.getElementById('choiceModal').style.display = 'none';  
-  }  
-  
-  window.onclick = function(e) {  
-    const modal = document.getElementById('choiceModal');  
-    if (e.target === modal) {  
-      closeChoiceModal();  
-    }  
-  }  
-</script>  </body>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Williams Capital - Forex Signals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --dark: #0a0a0a;
+            --light: #f0f0f0;
+            --gray: #d0d0d0;
+            --success: #28a745;
+            --danger: #dc3545;
+            --text: #f0f0f0;
+            --text-light: #a0a0a0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--dark), var(--primary));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .logo i {
+            color: var(--success);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav a:hover {
+            color: var(--success);
+        }
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--success);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        nav a:hover:after {
+            width: 100%;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1586280501652-f39435e3c83a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--success);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: var(--success);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #218838;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        /* Performance Section */
+        .performance {
+            background: var(--primary);
+            padding: 70px 0;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--success);
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--success);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .stats {
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--gray);
+        }
+        .stats h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .stats-value {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--success);
+        }
+        .stats-desc {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        /* Courses Section */
+        .courses {
+            padding: 70px 0;
+            background: var(--primary);
+        }
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .course-card {
+            background: var(--dark);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray);
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-color: var(--success);
+        }
+        .course-header {
+            padding: 25px;
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+            position: relative;
+            border-bottom: 2px solid var(--success);
+        }
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--success);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .course-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--success);
+        }
+        .course-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .course-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        .course-body {
+            padding: 25px;
+        }
+        .course-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .course-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .course-features li i {
+            color: var(--success);
+        }
+        .course-footer {
+            padding: 0 25px 25px;
+        }
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--success);
+        }
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        /* Join Section */
+        .join-section {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .join-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .join-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--success);
+        }
+        .join-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .founder-credit {
+            margin-top: 30px;
+            font-style: italic;
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--success);
+            bottom: 0;
+            left: 0;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #a0b3d6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--success);
+            padding-left: 5px;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #a0b3d6;
+            font-size: 0.9rem;
+        }
+        /* Payment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: var(--dark);
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            animation: modalOpen 0.4s ease;
+            border: 1px solid var(--gray);
+        }
+        @keyframes modalOpen {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .modal-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--success);
+        }
+        .modal-header h2 {
+            font-size: 1.8rem;
+            color: var(--success);
+        }
+        .modal-body {
+            padding: 30px;
+        }
+        .payment-methods {
+            margin-bottom: 30px;
+        }
+        .payment-method {
+            background: var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--success);
+        }
+        .payment-method h3 {
+            margin-bottom: 15px;
+            color: var(--success);
+        }
+        .payment-details {
+            background: var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .payment-details h3 {
+            margin-bottom: 15px;
+            color: var(--success);
+        }
+        .account-holder {
+            background: rgba(40, 167, 69, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 600;
+            border-left: 3px solid var(--success);
+        }
+        .instructions {
+            margin-top: 30px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .instructions li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+        .modal-footer {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid var(--gray);
+        }
+        .btn-back {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-back:hover {
+            background: #5a6268;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+        .whatsapp-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .stats-value {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            .join-section h2 {
+                font-size: 2rem;
+            }
+        }
+        /* ===== INTRO ANIMATION ===== */
+        .intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            overflow: hidden;
+        }
+        #candlestickCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .brand-reveal {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 20px;
+        }
+        .brand-name {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.05em;
+            color: transparent;
+            background: linear-gradient(90deg, var(--success), #4caf50);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .loading-bar {
+            width: 80%;
+            max-width: 400px;
+            height: 3px;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        .loading-progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--success), #4caf50);
+            transition: width 3.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .fade-out {
+            animation: fadeOut 0.8s ease-out forwards;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WILLIAMS CAPITAL INTRO ANIMATION -->
+    <div class="intro-overlay" id="introOverlay">
+        <canvas id="candlestickCanvas"></canvas>
+        <div class="brand-reveal">
+            <div class="brand-name">WILLIAMS CAPITAL</div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Website content starts here -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Williams Capital</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#performance">Performance</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Premium Forex Signals with Williams Capital</h1>
+                <p>Join our exclusive VIP signals group and receive high-quality trading signals with proven accuracy. Trade with confidence alongside professional traders.</p>
+                <div class="btn-group">
+                    <a href="#packages" class="btn btn-primary">Get VIP Signals</a>
+                    <a href="https://chat.whatsapp.com/Exewuij5kEy63RGWX2Lj70?mode=hqrt2" class="btn btn-outline">Join WhatsApp Group</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="performance" id="performance">
+        <div class="container">
+            <h2 class="section-title">Our Performance</h2>
+            <div class="stats">
+                <h3>Total Pips Captured</h3>
+                <div class="stats-value">3,800+</div>
+                <div class="stats-desc">This month alone</div>
+            </div>
+        </div>
+    </section>
+    <section class="courses" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">VIP Signals Packages</h2>
+                <p>Choose the perfect plan that fits your trading schedule</p>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">VIP Weekly</h3>
+                        <div class="course-price">$10 <span>per week</span></div>
+                        <p>7 days of premium signals with full support</p>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> Daily trading signals</li>
+                            <li><i class="fas fa-check-circle"></i> Entry, Stop-Loss & Take-Profit levels</li>
+                            <li><i class="fas fa-check-circle"></i> Market analysis</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 WhatsApp support</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-block enroll-btn" data-course="VIP Weekly" data-price="10">Get Access</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <h3 class="course-title">VIP Bi-weekly</h3>
+                        <div class="course-price">$20 <span>per 2 weeks</span></div>
+                        <p>14 days of premium signals with full analysis</p>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> All weekly features</li>
+                            <li><i class="fas fa-check-circle"></i> Additional weekend analysis</li>
+                            <li><i class="fas fa-check-circle"></i> 2x daily signals</li>
+                            <li><i class="fas fa-check-circle"></i> Priority support</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-block enroll-btn" data-course="VIP Bi-weekly" data-price="20">Get Access</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3 class="course-title">VIP Monthly</h3>
+                        <div class="course-price">$30 <span>per month</span></div>
+                        <p>30 days of premium signals with exclusive benefits</p>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-features">
+                            <li><i class="fas fa-check-circle"></i> All bi-weekly features</li>
+                            <li><i class="fas fa-check-circle"></i> Weekly market outlook</li>
+                            <li><i class="fas fa-check-circle"></i> Special event alerts</li>
+                            <li><i class="fas fa-check-circle"></i> Personal trading consultation</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <button class="btn btn-primary btn-block enroll-btn" data-course="VIP Monthly" data-price="30">Get Access</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Trading?</h2>
+            <p>Join hundreds of successful traders who trust Williams Capital for accurate, profitable signals</p>
+            <a href="#packages" class="btn btn-primary">Start Earning Today</a>
+        </div>
+    </section>
+    <!-- New Join Now Section -->
+    <section class="join-section">
+        <div class="container">
+            <div class="join-container">
+                <h2>Join Our VIP Signals Group</h2>
+                <p>Get instant access to our premium forex signals and trading community</p>
+                <a href="https://chat.whatsapp.com/Exewuij5kEy63RGWX2Lj70?mode=hqrt2" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;">
+                    <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                </a>
+                <p class="founder-credit">Founder E. William</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Williams Capital</h3>
+                    <p>Premium forex signals and analysis for serious traders.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Packages</h3>
+                    <ul class="footer-links">
+                        <li><a href="#packages">VIP Weekly ($10)</a></li>
+                        <li><a href="#packages">VIP Bi-weekly ($20)</a></li>
+                        <li><a href="#packages">VIP Monthly ($30)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/263718517301" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +263 71 851 7301</a></li>
+                        <li><a href="tel:+263718517301"><i class="fas fa-phone"></i> Call: +263 71 851 7301</a></li>
+                        <li><a href="mailto:eddingtonw056@gmail.com"><i class="fas fa-envelope"></i> Email: eddingtonw056@gmail.com</a></li>
+                        <li><a href="https://chat.whatsapp.com/Exewuij5kEy63RGWX2Lj70?mode=hqrt2" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Group</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Williams Capital. All rights reserved. Trading involves substantial risk.</p>
+            </div>
+        </div>
+    </footer>
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Payment</h2>
+                <p>williams.capital.signals</p>
+            </div>
+            <div class="modal-body">
+                <h3>Choose Payment Method</h3>
+                <div class="payment-methods">
+                    <div class="payment-method">
+                        <h3>EcoCash</h3>
+                        <p>Mobile Money</p>
+                        <p>Mobile Number: <strong>0787335584</strong></p>
+                    </div>
+                </div>
+                <div class="payment-details">
+                    <h3>Account Holder Details</h3>
+                    <div class="account-holder">
+                        Name: <strong>E. William</strong>
+                    </div>
+                </div>
+                <div class="instructions">
+                    <h3>Payment Instructions</h3>
+                    <ul>
+                        <li>Make payment using EcoCash to 0787335584</li>
+                        <li>Use the exact amount: $<span id="coursePrice">10</span></li>
+                        <li>Send payment confirmation screenshot to WhatsApp: +263718517301</li>
+                        <li>Include your full name and selected package in the message</li>
+                        <li>Access to the VIP group will be granted within 24 hours of payment confirmation</li>
+                    </ul>
+                </div>
+                <div class="whatsapp-section">
+                    <h3>Confirm & Join</h3>
+                    <button class="btn whatsapp-btn" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                    </button>
+                    <a href="#" class="btn btn-primary btn-block" id="ecocashBtn">Pay with EcoCash</a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-back" id="backBtn">Back to Packages</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Initialize intro animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Prevent scrolling during intro
+            document.body.style.overflow = 'hidden';
+            // Initialize the intro
+            initIntro();
+            // Your existing website JavaScript
+            const modal = document.getElementById('paymentModal');
+            const enrollBtns = document.querySelectorAll('.enroll-btn');
+            const coursePrice = document.getElementById('coursePrice');
+            const backBtn = document.getElementById('backBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const ecocashBtn = document.getElementById('ecocashBtn');
+            // Current course info
+            let currentCourse = '';
+            let currentPrice = '';
+            const whatsappNumber = '263718517301';
+            // Open modal when enroll button is clicked
+            enrollBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentCourse = this.getAttribute('data-course');
+                    currentPrice = this.getAttribute('data-price');
+                    // Update the course price in modal
+                    coursePrice.textContent = currentPrice;
+                    // Show modal
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+            // Close modal when back button is clicked
+            backBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            });
+            // Close modal when clicking outside of modal content
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            // WhatsApp button functionality
+            whatsappBtn.addEventListener('click', function() {
+                const message = `Hello Williams Capital, I am interested in the ${currentCourse} package priced at $${currentPrice}. My name is [Your Full Name].`;
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+            // EcoCash auto-dial button functionality
+            ecocashBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const ecocashNumber = '0787335584';
+                const ecocashUrl = `tel:*153*1*1*${ecocashNumber}*${currentPrice}#`;
+                window.location.href = ecocashUrl;
+            });
+        });
+        function initIntro() {
+            const canvas = document.getElementById('candlestickCanvas');
+            const ctx = canvas.getContext('2d');
+            const loadingProgress = document.getElementById('loadingProgress');
+            const introOverlay = document.getElementById('introOverlay');
+            // Set canvas dimensions
+            function resizeCanvas() {
+                const dpr = window.devicePixelRatio || 1;
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                ctx.scale(dpr, dpr);
+                drawChartGrid();
+            }
+            // Draw chart grid
+            function drawChartGrid() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const width = canvas.clientWidth;
+                const height = canvas.clientHeight;
+                const gridColor = 'rgba(255, 255, 255, 0.03)';
+                // Vertical grid lines
+                ctx.strokeStyle = gridColor;
+                ctx.lineWidth = 1;
+                for (let x = 0; x < width; x += width / 8) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, height);
+                    ctx.stroke();
+                }
+                // Horizontal grid lines
+                for (let y = 0; y < height; y += height / 5) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(width, y);
+                    ctx.stroke();
+                }
+            }
+            // Candlestick parameters
+            const candleWidth = 16;
+            const candleGap = 6;
+            let candleCount = Math.floor(canvas.clientWidth / (candleWidth + candleGap)) + 10;
+            let offsetX = 0;
+            let candles = [];
+            let lastClose = 1.0800;
+            // Generate candlesticks
+            function generateCandle(prevClose) {
+                const pipSize = 0.0001;
+                const trendBias = Math.random() > 0.6 ? 1 : -1;
+                let open = prevClose + (Math.random() - 0.5) * 5 * pipSize;
+                let close = open + trendBias * (5 + Math.random() * 15) * pipSize;
+                let high = Math.max(open, close) + Math.random() * 8 * pipSize;
+                let low = Math.min(open, close) - Math.random() * 8 * pipSize;
+                // Ensure minimum candle body
+                if (Math.abs(close - open) < 3 * pipSize) {
+                    close = open + (Math.random() > 0.5 ? 1 : -1) * 3 * pipSize;
+                }
+                return {
+                    open: parseFloat(open.toFixed(4)),
+                    close: parseFloat(close.toFixed(4)),
+                    high: parseFloat(high.toFixed(4)),
+                    low: parseFloat(low.toFixed(4))
+                };
+            }
+            // Initialize candles
+            for (let i = 0; i < candleCount; i++) {
+                let candle = generateCandle(lastClose);
+                lastClose = candle.close;
+                candles.push(candle);
+            }
+            // Draw candlestick
+            function drawCandle(x, candle) {
+                const isBullish = candle.close > candle.open;
+                const bodyTop = Math.min(candle.open, candle.close);
+                const bodyBottom = Math.max(candle.open, candle.close);
+                const scaleY = 8000;
+                // Calculate pixel positions
+                const height = canvas.clientHeight;
+                const bodyHeight = (bodyBottom - bodyTop) * scaleY;
+                const bodyY = height * 0.7 - (bodyTop - 1.0750) * scaleY;
+                const wickTop = height * 0.7 - (candle.high - 1.0750) * scaleY;
+                const wickBottom = height * 0.7 - (candle.low - 1.0750) * scaleY;
+                // Colors - Green for bullish, Red for bearish
+                const bodyColor = isBullish ? 'rgba(40, 167, 69, 0.9)' : 'rgba(220, 53, 69, 0.9)';
+                const wickColor = isBullish ? 'rgba(40, 167, 69, 0.95)' : 'rgba(220, 53, 69, 0.95)';
+                // Draw wick
+                ctx.beginPath();
+                ctx.strokeStyle = wickColor;
+                ctx.lineWidth = 2;
+                ctx.moveTo(x + candleWidth / 2, wickTop);
+                ctx.lineTo(x + candleWidth / 2, wickBottom);
+                ctx.stroke();
+                // Draw body
+                ctx.fillStyle = bodyColor;
+                ctx.fillRect(x, bodyY, candleWidth, bodyHeight);
+                // Body highlight
+                ctx.strokeStyle = isBullish ? 'rgba(25, 135, 84, 0.7)' : 'rgba(201, 48, 44, 0.7)';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(x + 0.5, bodyY + 0.5, candleWidth - 1, bodyHeight - 1);
+            }
+            // Animation loop
+            function animate() {
+                drawChartGrid();
+                // Slow down the movement
+                offsetX -= 0.6;
+                // Cycle candles when needed
+                if (Math.abs(offsetX) > (candleWidth + candleGap)) {
+                    offsetX += candleWidth + candleGap;
+                    candles.shift();
+                    candles.push(generateCandle(candles[candles.length - 1].close));
+                }
+                // Draw all candles with offset
+                for (let i = 0; i < candles.length; i++) {
+                    let x = i * (candleWidth + candleGap) + offsetX;
+                    if (x > -candleWidth && x < canvas.clientWidth) {
+                        drawCandle(x, candles[i]);
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            // Start the intro sequence
+            function startIntroSequence() {
+                // Start loading bar
+                setTimeout(() => {
+                    loadingProgress.style.width = '100%';
+                }, 1000);
+                // Wait for animations to complete
+                setTimeout(() => {
+                    // Fade out overlay
+                    introOverlay.classList.add('fade-out');
+                    setTimeout(() => {
+                        introOverlay.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }, 800);
+                }, 4000);
+            }
+            // Initialize and start animations
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            animate();
+            startIntroSequence();
+        }
+    </script>
+</body>
 </html>
